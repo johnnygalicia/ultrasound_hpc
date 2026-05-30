@@ -48,25 +48,6 @@ def process_video(video_path):
     # Frame de prueba
     test_frame = frames[500]
 
-    # Filtro bilateral
-    bilateral_result = bilateral_filter(
-        test_frame,
-        diameter=9,
-        sigma_color=75,
-        sigma_space=75
-    )
-
-    # CLAHE
-    clahe_result = apply_clahe(
-        bilateral_result
-    )
-
-    # Mostrar comparación
-    show_comparison(
-        clahe_result,
-        bilateral_result,
-        title_processed=f"{video_name}"
-    )
 
 
 def main():

@@ -133,7 +133,7 @@ class BilateralGPU:
         self.kernel = self.program.bilateral_filter
 
     # =============================================
-    # APPLY
+    # APLICACION
     # =============================================
 
     def apply(

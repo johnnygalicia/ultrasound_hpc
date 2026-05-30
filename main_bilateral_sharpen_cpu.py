@@ -4,7 +4,7 @@ import time
 
 from tqdm import tqdm
 
-from src.filters.speckle_reduction import (
+from filters.bilateral_filter import (
     bilateral_filter
 )
 
@@ -13,7 +13,7 @@ from src.filters.sharpen_cpu import (
 )
 
 # =============================================
-# CONFIG
+# Entrada y salida de los frames 
 # =============================================
 
 INPUT_DIR = "data/processed/video_2_frames"
@@ -46,7 +46,7 @@ print(
 )
 
 # =============================================
-# TIMER START
+# Iniciar tiempo 
 # =============================================
 
 start_time = time.perf_counter()
@@ -71,7 +71,7 @@ for frame_file in tqdm(
     )
 
     # =========================================
-    # STEP 1: BILATERAL
+    # Filtro 1: BILATERAL
     # =========================================
 
     bilateral = bilateral_filter(
@@ -79,7 +79,7 @@ for frame_file in tqdm(
     )
 
     # =========================================
-    # STEP 2: SHARPEN
+    # Filtro 2: SHARPEN
     # =========================================
 
     sharpened = apply_sharpen(
@@ -101,14 +101,11 @@ for frame_file in tqdm(
     )
 
 # =============================================
-# TIMER END
+# Finalizar Tiempo
 # =============================================
 
 end_time = time.perf_counter()
 
-# =============================================
-# RESULTS
-# =============================================
 
 total_time = end_time - start_time
 
@@ -121,7 +118,7 @@ fps = (
 )
 
 print("\n===================================")
-print("RESULTS")
+print("RESULTADOS")
 print("===================================\n")
 
 print(

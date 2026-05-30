@@ -13,7 +13,7 @@ from src.parallel.sharpen_gpu import (
 )
 
 # =============================================
-# CONFIG
+# Entrada y salida de los frames 
 # =============================================
 
 INPUT_DIR = "data/processed/video_2_frames"
@@ -28,7 +28,7 @@ os.makedirs(
 )
 
 # =============================================
-# GPU FILTERS
+# Filtros en GPU 
 # =============================================
 
 bilateral_gpu = BilateralGPU()

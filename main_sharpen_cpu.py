@@ -9,7 +9,7 @@ from src.filters.sharpen_cpu import (
 )
 
 # =============================================
-# CONFIG
+# Entrada y salida de los frames
 # =============================================
 
 INPUT_DIR = "data/processed/video_2_frames"
@@ -24,7 +24,7 @@ os.makedirs(
 )
 
 # =============================================
-# OBTENER FRAMES
+# Cargar Frames
 # =============================================
 
 frame_files = sorted([
@@ -42,7 +42,7 @@ print(
 )
 
 # =============================================
-# TIMER START
+# Iniciar Tiempo
 # =============================================
 
 start_time = time.perf_counter()
@@ -67,7 +67,7 @@ for frame_file in tqdm(
     )
 
     # =========================================
-    # SHARPEN
+    # Filtro SHARPEN
     # =========================================
 
     sharpened = apply_sharpen(
@@ -89,13 +89,13 @@ for frame_file in tqdm(
     )
 
 # =============================================
-# TIMER END
+# Finalizar tiempo 
 # =============================================
 
 end_time = time.perf_counter()
 
 # =============================================
-# RESULTS
+# Resultados
 # =============================================
 
 total_time = end_time - start_time
@@ -109,7 +109,7 @@ fps = (
 )
 
 print("\n==============================")
-print("RESULTS")
+print("RESULTADOS")
 print("==============================\n")
 
 print(

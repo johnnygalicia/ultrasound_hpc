@@ -9,7 +9,7 @@ from src.parallel.sharpen_gpu import (
 )
 
 # =============================================
-# CONFIG
+# Entrada y salida de los frames 
 # =============================================
 
 INPUT_DIR = "data/processed/video_2_frames"
@@ -24,7 +24,7 @@ os.makedirs(
 )
 
 # =============================================
-# GPU FILTER
+# Filtro SHARPEN en GPU
 # =============================================
 
 gpu_filter = SharpenGPU()
@@ -48,7 +48,7 @@ print(
 )
 
 # =============================================
-# TIMER START
+# Iniciar Tiempo
 # =============================================
 
 start_time = time.perf_counter()
@@ -73,7 +73,7 @@ for frame_file in tqdm(
     )
 
     # =========================================
-    # SHARPEN GPU
+    # Filtro SHARPEN GPU
     # =========================================
 
     sharpened_gpu = gpu_filter.apply(
@@ -95,13 +95,13 @@ for frame_file in tqdm(
     )
 
 # =============================================
-# TIMER END
+# Finalizar tiempo 
 # =============================================
 
 end_time = time.perf_counter()
 
 # =============================================
-# RESULTS
+# Resultados
 # =============================================
 
 total_time = end_time - start_time

@@ -4,24 +4,24 @@ import cv2
 
 from tqdm import tqdm
 
-from src.parallel.bilateral_gpu import (
+from src.parallel.bilateral_gpu_2 import (
     BilateralGPU
 )
 
 # =============================================
-# CONFIG
+# Cargar Frames
 # =============================================
 
 FRAMES_DIR = "data/processed/video_2_frames"
 
 # =============================================
-# GPU FILTER
+# Filtro BILATERAL en GPU
 # =============================================
 
 gpu_filter = BilateralGPU()
 
 # =============================================
-# OBTENER FRAMES
+# Listar Frames
 # =============================================
 
 frame_files = sorted([
@@ -36,7 +36,7 @@ print("==============================\n")
 print(f"Frames encontrados: {len(frame_files)}")
 
 # =============================================
-# TIMER START
+# Iniciar tiempo 
 # =============================================
 
 start_time = time.perf_counter()
@@ -63,7 +63,7 @@ for frame_file in tqdm(
     result_gpu = gpu_filter.apply(image)
     
     output_path = os.path.join(
-        "data/processed/video2_bilateral_gpu",
+        "data/processed/video2_bilateral_gpu_2",
         frame_file
     )
 
@@ -72,7 +72,7 @@ for frame_file in tqdm(
         result_gpu
     )
 # =============================================
-# TIMER END
+# Finalizar tiempo 
 # =============================================
 
 end_time = time.perf_counter()
@@ -80,7 +80,7 @@ end_time = time.perf_counter()
 cv2.imwrite(output_path, result_gpu)
 
 # =============================================
-# RESULTS
+# Resultados
 # =============================================
 
 total_time = end_time - start_time
@@ -90,7 +90,7 @@ avg_time = total_time / len(frame_files)
 fps = len(frame_files) / total_time
 
 print("\n==============================")
-print("RESULTS")
+print("RESULTADOS")
 print("==============================\n")
 
 print(f"Tiempo total: {total_time:.4f} s")

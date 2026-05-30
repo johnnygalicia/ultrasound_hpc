@@ -4,15 +4,7 @@ import cv2
 
 from tqdm import tqdm
 
-# =============================================
-# CONFIG
-# =============================================
-
 FRAMES_DIR = "data/processed/video_2_frames"
-
-# =============================================
-# OBTENER FRAMES
-# =============================================
 
 frame_files = sorted([
     f for f in os.listdir(FRAMES_DIR)
@@ -20,21 +12,17 @@ frame_files = sorted([
 ])
 
 print("\n==============================")
-print("CPU BILATERAL BENCHMARK")
+print("CPU BILATERAL")
 print("==============================\n")
 
 print(f"Frames encontrados: {len(frame_files)}")
 
-# =============================================
-# TIMER START
-# =============================================
+
+# Iniciar tiempo 
 
 start_time = time.perf_counter()
 
-# =============================================
 # LOOP
-# =============================================
-
 for frame_file in tqdm(
     frame_files,
     desc="Processing CPU"
@@ -52,7 +40,7 @@ for frame_file in tqdm(
 
     result = cv2.bilateralFilter(
         image,
-        d=9,
+        d=5,
         sigmaColor=25,
         sigmaSpace=10
     )
@@ -67,19 +55,12 @@ for frame_file in tqdm(
         result
     )
 
-# =============================================
-# TIMER END
-# =============================================
+# Finalizar tiempo 
 
 end_time = time.perf_counter()
 
-
-
 cv2.imwrite(output_path, result)
 
-# =============================================
-# RESULTS
-# =============================================
 
 total_time = end_time - start_time
 
