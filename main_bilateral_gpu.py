@@ -4,7 +4,7 @@ import cv2
 
 from tqdm import tqdm
 
-from src.parallel.bilateral_gpu_2 import (
+from src.parallel.bilateral_gpu import (
     BilateralGPU
 )
 
