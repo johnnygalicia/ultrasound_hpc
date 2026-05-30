@@ -220,7 +220,7 @@ Licenciatura en Física
 
 Proyecto Final — Temas Selectos de Cómputo de Alto Desempeño
 
-Universidad Autónoma Metropolitana
+Universidad Nacional Autónoma de México UNAM 
 
 2026
 
@@ -246,9 +246,7 @@ Medical ultrasound images are heavily affected by speckle noise, which degrades 
 This project implements and evaluates several enhancement techniques:
 
 - Bilateral Filtering
-- Gaussian Blur
 - Image Sharpening
-- CLAHE (Contrast Limited Adaptive Histogram Equalization)
 
 The objective is to improve image quality while analyzing the computational benefits and limitations of parallel architectures.
 
@@ -309,7 +307,7 @@ Frame Extraction
           │
           ▼
 Image Processing
-(Bilateral / Sharpen / CLAHE)
+(Bilateral / Sharpen)
           │
           ▼
 Benchmarking
@@ -432,5 +430,7 @@ Johnny Michael Galicia Orihuela
 Bachelor's Degree in Physics
 
 High Performance Computing – Final Project
+
+Universidad Nacional Autónoma de México UNAM 
 
 2026
