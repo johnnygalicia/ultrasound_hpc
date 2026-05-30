@@ -87,7 +87,7 @@ Extracción de Frames
           │
           ▼
 Procesamiento de Imagen
-(Bilateral / Sharpen / CLAHE)
+(Bilateral / Sharpen )
           │
           ▼
 Benchmark de Rendimiento
