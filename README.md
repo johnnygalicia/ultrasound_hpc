@@ -22,9 +22,7 @@ Este proyecto implementa diversas técnicas de mejora de imagen con el objetivo 
 Los filtros implementados incluyen:
 
 - Filtro Bilateral
-- Gaussian Blur
 - Sharpen (Realce de Bordes)
-- CLAHE (Contrast Limited Adaptive Histogram Equalization)
 
 ---
 
